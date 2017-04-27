@@ -1,4 +1,4 @@
-##Proyecto Final Sprint 2: Lista de Tareas
+### Proyecto Final Sprint 2: Lista de Tareas
 
 * Lista de tareas, donde cada tarea es un elemento de una lista
 * La lista JSON se encuentra en el archivo data.js y en html se muestra bajo el título de "Tareas Actuales"
