@@ -6,7 +6,7 @@ function mostrarTarea(){
 	});
 }
 mostrarTarea();
-
+/*
 var tareas = [];
 var nuevaTarea = document.getElementById('cont-nuevaTarea');
 
@@ -27,3 +27,34 @@ NuevaTarea.prototype.toHTML = function(){
 	return html;
 }
 
+//función para guardar nuevas tareas en el arreglo tareas
+function mergeHTML(){
+	var html = "";
+	for(var i = 0; i < tareas.length; i++){
+		html += tareas[i].toHTML();
+	}
+	return html;
+}
+
+//función que imprime la tarea
+function printHTML(html){
+	nuevaTarea.innerHTML = "";
+	nuevaTarea.innerHTML = html;
+}
+
+//var addTarea = document.getElementById('tarea');
+function anadirTarea(){
+	var userId = 1;
+	var id = prompt("id");
+	var title = document.getElementById('tarea');
+	var completed = prompt("c");
+	var tarea = new NuevaTarea(userId, id, title, completed)
+	tareas.push(tarea);
+	printHTML(tarea.toHTML());
+}
+
+*/
+function anadirTarea(){
+	var title = document.getElementById('tarea').value;
+	document.getElementById('cont-nuevaTarea').innerHTML = '<ul><li>' + title + '</li></ul>';
+}
