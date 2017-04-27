@@ -1,12 +1,13 @@
-//función para mostras las 10 tareas de JSON. JSON está en data.js
+//función para mostras las 10 tareas de JSON. JSON está en el archivo data.js
 function mostrarTarea(){
 	var tareas10 = res.forEach(function(element){
-		document.write('<ul><li>' + element.title + '</li></ul>'); //tares en una lista
+		document.write('<ul><li>' + element.title + '</li></ul>'); //muestra las tareas en una lista
 		//document.getElementById('cont-tarea').innerHTML = element.title + "<br>";
 	});
 }
 mostrarTarea();
-/*
+
+//para guardar la tarea ingresada como objeto con atributos: userId, id, title, completed
 var tareas = [];
 var nuevaTarea = document.getElementById('cont-nuevaTarea');
 
@@ -15,20 +16,11 @@ function NuevaTarea(userId, id, title, completed){
 	this.userId = userId;
 	this.id = id;
 	this.title = title;
-	this.completed = completed;
+	this.completed = completed
 };
 
-//método para imprimir la nueva tarea en html 
-NuevaTarea.prototype.toHTML = function(){
-	var html = " ";
-	html += this.id + "<br>";
-	html += this.title + "<br>";
-	html += this.completed + "<br>";
-	return html;
-}
-
-//función para guardar nuevas tareas en el arreglo tareas
-function mergeHTML(){
+//función para guardar las nuevas tareas ingresadas al input en el arreglo tareas
+function guardarTarea(){
 	var html = "";
 	for(var i = 0; i < tareas.length; i++){
 		html += tareas[i].toHTML();
@@ -36,25 +28,25 @@ function mergeHTML(){
 	return html;
 }
 
-//función que imprime la tarea
-function printHTML(html){
-	nuevaTarea.innerHTML = "";
-	nuevaTarea.innerHTML = html;
-}
-
-//var addTarea = document.getElementById('tarea');
+//función para añadir la nueva tarea con un botón e imprimirla
 function anadirTarea(){
 	var userId = 1;
-	var id = prompt("id");
-	var title = document.getElementById('tarea');
-	var completed = prompt("c");
-	var tarea = new NuevaTarea(userId, id, title, completed)
+	var id = prompt("Ingresar número de la tarea: ");
+
+	var title = document.getElementById('tarea').value;
+	nuevaTarea.innerHTML += '<ul><li>' + title + '</li></ul>';
+
+	var completed = prompt("Ingresar estado de la tarea \n(true si está completa, false si está incompleta");
+	var tarea = new NuevaTarea(userId, id, title, completed);
 	tareas.push(tarea);
-	printHTML(tarea.toHTML());
+
+	anadirTarea(tarea.toHTML());
+	anadirTarea(guardarTarea());	
 }
 
-*/
+/*
 function anadirTarea(){
 	var title = document.getElementById('tarea').value;
-	document.getElementById('cont-nuevaTarea').innerHTML = '<ul><li>' + title + '</li></ul>';
+	document.getElementById('cont-nuevaTarea').innerHTML += '<ul><li>' + title + '</li></ul>';
 }
+*/
