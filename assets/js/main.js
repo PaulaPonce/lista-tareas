@@ -1,14 +1,13 @@
-//función para mostras las 10 tareas de JSON. JSON está en el archivo data.js
+//función para mostras las 10 tareas de JSON en una lista. JSON está en el archivo data.js
 function mostrarTarea(){
 	var tareas10 = res.forEach(function(element){
-		document.write('<ul><li>' + element.title + '</li></ul>'); //muestra las tareas en una lista
-		//document.getElementById('cont-tarea').innerHTML = element.title + "<br>";
+		document.getElementById('cont-tarea').innerHTML += '<ul><li>' + element.title + '</li></ul>';
 	});
 }
 mostrarTarea();
 
 //para guardar la tarea ingresada como objeto con atributos: userId, id, title, completed
-var tareas = [];
+var tareas = []; //aquí se guardaraon las nuevas tareas
 var nuevaTarea = document.getElementById('cont-nuevaTarea');
 
 //constructor para generar una nueva tarea
