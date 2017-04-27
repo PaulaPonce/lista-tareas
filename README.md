@@ -6,4 +6,4 @@
 * Cada tarea ingresada se guarda como un constructor con atributos: userId, id, title, completed
   * el valor del userId es 1, para todas las tareas
   * title es la tarea ingresada al input
-  * el id y completed son ingresados mediante un prompt
+  * el id y completed (por defecto es false) son ingresados mediante un prompt por el usuario
