@@ -3,24 +3,46 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lista de Tareas</title>
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- Favicon -->
+	<link rel="icon"
+      type="image/ico"
+      href="assets/img/favicon.ico">
+	<!-- FontAwesome -->
+	<script src="https://use.fontawesome.com/b432f04897.js"></script>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet">
+	<!-- main.css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
-	<h1>Lista de Tareas</h1>
+	<header class="header flex-container">
+		<h1 class="header__title">Lista de Tareas</h1>
+	</header>
 	
+	<section class="container add flex-container">
+		<form class="add-form">
+			<label for="tarea" class="add-form__label"><i class="fa fa-thumb-tack fa-rotate-30" aria-hidden="true"></i>  Añadir una tarea</label>
+			<hr class="divider">
+			<input type="text" id="tarea" placeholder="Nueva tarea..." class="add-form__input">
+			<button type="submit" onclick="anadirTarea(); return false" class="add-form__button"><i class="fa fa-plus" aria-hidden="true"></i> Añadir Tarea</button>
+		</form>
+	</section>
+		
+	<section class="container to-do flex-container">
+		<h4 class="to-do__title"><i class="fa fa-thumb-tack fa-rotate-30" aria-hidden="true"></i>  Tareas actuales:</h4>
+		<hr class="divider">
+		<ol id="lista-tareas" class="to-do__list"></ol>
+	</section>
 
-	<label for="tarea"></label>
-	<input type="text" id="tarea">
-	
-	<button type="submit" onclick="anadirTarea(); return false">Añadir Tarea</button>
-	<div id="cont-tarea">
-		<h4>Tareas actuales:</h4>
-	</div>
+	<footer class="footer flex-container">
+		<small>Desarrollado por <b>Paula Ponce</b></small>
+	</footer>
 
-	<div id="cont-nuevaTarea">
-		<h4>Nuevas Tareas:</h4>
-	</div>
-
+	<!-- JSON file-->
 	<script type="text/javascript" src="assets/js/data.js"></script>
+	<!-- main.js -->
 	<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
